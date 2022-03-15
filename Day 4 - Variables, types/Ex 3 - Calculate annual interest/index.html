@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate annual interest</title>
+</head>
+
+<body>
+    <script>
+        let amountOfMoney = parseInt(prompt("Nhập vào số tiền gốc, đơn vị Triệu đồng"));
+        let noOfYear = parseInt(prompt("Nhập vào số năm, đơn vị năm"));
+        let annualRate = parseFloat(prompt("Nhập vào tỉ lệ lãi suất hàng năm, đơn vị %"));
+        let totalMoney = amountOfMoney + noOfYear * (amountOfMoney * (annualRate / 100));
+        document.write("Số tiền sau " + noOfYear + " năm là: " + totalMoney + " triệu VNĐ");
+    </script>
+</body>
+
+</html>

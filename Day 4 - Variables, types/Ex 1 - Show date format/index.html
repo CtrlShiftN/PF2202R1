@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show date format</title>
+</head>
+
+<body>
+    <script>
+        // isNaN
+        let day = parseInt(prompt("Nhap vao ngay: "));
+        // validate du lieu nhap vao: ngay la 1 so nguyen trong khoang 1 - 31
+        while (isNaN(day) || day < 0 || day > 31) {
+            day = parseInt(prompt("Nhap vao ngay: "));
+        }
+        let month = parseInt(prompt("Nhap vao thang: "));
+        let year = parseInt(prompt("Nhap vao nam: "));
+        document.write((day < 10 ? "0" + day : day) + "-" + (month < 10 ? "0" + month : month) + "-" + year);
+        // conditional expression ? true : false 
+        // if(conditional expression) true else false
+    </script>
+</body>
+
+</html>
