@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add or delete an element</title>
+</head>
+<body>
+    <div class="container" id="index-content">
+        <h1>Hello</h1>
+        <h3 id="h3">H3 tag</h3>
+    </div>
+    <script>
+        // tim phan tu can thay doi
+        let indexContent = document.getElementById('index-content');
+        // tao ra mot phan tu moi voi create
+        let p = document.createElement('p'); // <p></p>
+        // them noi dung cho the moi tao 
+        p.innerText = "This is an added p tag"; // <p>This is an added p tag</p>
+        // them phan tu vao dom
+        // indexContent.appendChild(p); 
+        let a = document.createElement('a');
+        a.appendChild(p);
+        indexContent.appendChild(a);
+        // demo remove
+        let h3 = document.getElementById('h3');
+        // h3.remove();
+        indexContent.removeChild(h3);
+    </script>
+</body>
+</html>

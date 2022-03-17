@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intro event</title>
+</head>
+
+<body>
+    <div class="container">
+        <button onclick="logTime()">Click me</button>
+        <button onclick="logName('abc')">Log name demo</button>
+        <button class="demoBtn" onclick="demoThis(this)">Demo this</button>
+        <button onclick="addElement()">Add Element</button>
+        <div id="demo"></div>
+        <button id="addElementBtn">Click here to add an element</button>
+    </div>
+    <script>
+        // function k truyen tham so
+        function logTime() {
+            let now = new Date();
+            console.log(now);
+        }
+        // function truyen tham so
+        function logName(name) {
+            console.log(name);
+        }
+        // function su dung this 
+        function demoThis(obj) {
+            console.log(obj);
+            obj.style.color = "red";
+        }
+        // function them the tag moi khi click
+        function addElement() {
+            let p = document.createElement('p');
+            p.innerText = "This is an added p tag";
+            document.getElementById('demo').appendChild(p);
+        }
+        // demo event listener
+        let addElementBtn = document.getElementById('addElementBtn');
+        let demo = document.getElementById('demo');
+        addElementBtn.addEventListener('click', addElement);
+        addElementBtn.addEventListener('click', function () {
+            demo.style.backgroundColor = "red";
+            console.log(this);
+        });
+    </script>
+</body>
+
+</html>
