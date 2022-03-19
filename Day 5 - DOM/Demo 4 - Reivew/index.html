@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Review</title>
+</head>
+<body>
+    <div class="container">
+        <button id="clickBtn">Click me</button>
+        <br/>
+        <button onclick="showMessage()">Show message</button>
+    </div>
+    <script>
+        let clickBtn = document.getElementById('clickBtn'); // tim phan tu tren DOM co chua id = clickBtn
+        clickBtn.addEventListener('click', function() {
+            console.log('Ultra');
+        });
+        function showMessage() {
+            console.log('U have just been clicked the button');
+        }
+    </script>
+</body>
+</html>

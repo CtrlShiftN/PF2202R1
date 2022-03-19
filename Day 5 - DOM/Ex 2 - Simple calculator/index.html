@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple calculator</title>
+</head>
+
+<body>
+    <input type="number" id="first-number" placeholder="Enter the first number">
+    <input type="number" id="second-number" placeholder="Enter the second number">
+    <br />
+    <br />
+    <button id="additionBtn">Addition (+)</button>
+    <button id="subtractionBtn">Subtraction (-)</button>
+    <button id="multiplicationBtn">Multiplication (*)</button>
+    <button id="divisionBtn">Division (/)</button>
+    <br />
+    <br />
+    <div id="result"></div>
+    <script>
+        // khai báo biến
+        let firstNumberInput = document.getElementById('first-number');
+        let secondNumberInput = document.getElementById('second-number');
+        let additionBtn = document.getElementById('additionBtn');
+        let subtractionBtn = document.getElementById('subtractionBtn');
+        let multiplicationBtn = document.getElementById('multiplicationBtn');
+        let divisionBtn = document.getElementById('divisionBtn');
+        let result = document.getElementById('result');
+        let firstNumber, secondNumber;
+        // lắng nghe sự kiện khi người dùng nhập vào một số bất kỳ trong các ô input
+        firstNumberInput.addEventListener('change', function () {
+            firstNumber = parseFloat(firstNumberInput.value);
+        });
+        secondNumberInput.addEventListener('change', function () {
+            secondNumber = parseFloat(secondNumberInput.value);
+        });
+        // lắng nghe sự kiện khi người dùng nhấn các nút cộng, trừ, nhân, chia
+        additionBtn.addEventListener('click', function () {
+            result.innerText = "Addition = " + (firstNumber + secondNumber);
+        });
+        subtractionBtn.addEventListener('click', function () {
+            result.innerText = "Subtraction = " + (firstNumber - secondNumber);
+        });
+        multiplicationBtn.addEventListener('click', function () {
+            result.innerText = "Multiplication = " + (firstNumber * secondNumber);
+        });
+        divisionBtn.addEventListener('click', function () {
+            result.innerText = "Division = " + (firstNumber / secondNumber);
+        });
+    </script>
+</body>
+
+</html>

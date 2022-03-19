@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leap Years</title>
+</head>
+
+<body>
+    <script>
+        let leapYear = '';
+        let count = 0;
+        for (let index = 0; index < 2022; index++) {
+            if (index % 4 == 0) {
+                if (index % 100 == 0) {
+                    if (index % 400 == 0) {
+                        console.log(index);
+                    }
+                } else {
+                    console.log(index)
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

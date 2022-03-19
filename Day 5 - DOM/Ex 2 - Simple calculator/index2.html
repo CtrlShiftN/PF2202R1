@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple calculator</title>
+</head>
+
+<body>
+    <input type="number" placeholder="Enter the first number" onchange="modifyInput('firstNumber', this)">
+    <input type="number" placeholder="Enter the second number" onchange="modifyInput('secondNumber', this)">
+    <br />
+    <br />
+    <button onclick="calculate('add')">Addition (+)</button>
+    <button onclick="calculate('sub')">Subtraction (-)</button>
+    <button onclick="calculate('multi')">Multiplication (*)</button>
+    <button onclick="calculate('div')">Division (/)</button>
+    <br />
+    <br />
+    <div id="result"></div>
+    <script>
+        let firstNumber, secondNumber;
+        let result = document.getElementById('result');
+        // xử lý sự kiện khi người dùng thay đổi ở các ô input
+        function modifyInput(name, obj) {
+            switch (name) {
+                case 'firstNumber':
+                    firstNumber = parseFloat(obj.value);
+                    break;
+                case 'secondNumber':
+                    secondNumber = parseFloat(obj.value);
+                    break;
+                default:
+                    break;
+            }
+            console.log(name, obj.value);
+        }
+        // xử lý sự kiện khi người dùng nhấn các nút công, trừ, nhân, chia 
+        function calculate(method) {
+            switch (method) {
+                case 'add':
+                    result.innerText = "Addition = " + (firstNumber + secondNumber);
+                    break;
+                case 'sub':
+                    result.innerText = "Subtraction = " + (firstNumber - secondNumber);
+                    break;
+                case 'multi':
+                    result.innerText = "Multiplication = " + (firstNumber * secondNumber);
+                    break;
+                case 'div':
+                    result.innerText = "Division = " + (firstNumber / secondNumber);
+                    break;
+                default:
+                    result.innerText = "Not supported";
+                    break;
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check leap year</title>
+</head>
+
+<body>
+    <div id="demo"></div>
+    <script>
+        let demo = document.getElementById('demo');
+        // lấy sô năm để kiểm tra
+        let year = parseInt(prompt("Mời nhập vào một năm: "));
+        while (year < 0 || year > 9000) {
+            year = parseInt(prompt("Mời nhập vào một năm: "));
+        }
+        if (year % 4 == 0) { // nếu năm chia hết cho 4
+            if (year % 100 == 0) { // nếu năm chia hết cho 4 và 100
+                if (year % 400 == 0) { // năm nhuận là năm chia hết cho 4, 100 và 400
+                    demo.innerText = year + " is a leap year"
+                } else { // năm không nhuận vì chia hết cho 4, 100 nhưng không chia hết cho 400
+                    demo.innerText = year + " is NOT a leap year"
+                }
+            } else { // năm nhuận là năm chia hết cho 4 nhưng k chia hết cho 100
+                demo.innerText = year + " is a leap year"
+            }
+        } else { // trường hợp năm k chia hết cho 4 thì phải năm nhuận
+            demo.innerText = year + " is NOT a leap year"
+        }
+    </script>
+</body>
+
+</html>

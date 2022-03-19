@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check even</title>
+</head>
+
+<body>
+    <h3>Nhập số:</h3>
+    <input type="number" id="input-number">
+    <button id="checkBtn">Kiểm tra</button>
+    <br />
+    <div id="result"></div>
+    <script>
+        // khai báo biến
+        let inputNumber = document.getElementById('input-number');
+        let checkBtn = document.getElementById('checkBtn');
+        let result = document.getElementById('result');
+        // lắng nghe sự kiện khi người dùng nhấn vào nút kiểm tra
+        checkBtn.addEventListener('click', function () {
+            let number = inputNumber.value; // lấy giá trị từ ô input
+            let isEven = number % 2 == 0 ? "Even" : "Odd"; // kiểm tra tính chẵn lẻ
+            result.innerText = number + " is " + isEven; // hiển thị kết quả
+            console.log(isInt(number)); // kiểm tra xem số nhập vào có phải float
+        })
+        // hàm kiểm tra xem một số có phải integer hay float
+        function isInt(number) {
+            return number % 1 === 0;
+        }
+    </script>
+</body>
+
+</html>
