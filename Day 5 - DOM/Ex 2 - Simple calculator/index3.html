@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+
+<body>
+    <button id="1" onclick="modifyInput(this)">1</button>
+    <button id="2" onclick="modifyInput(this)">2</button>
+    <button id="3" onclick="modifyInput(this)">3</button>
+    <button id="4" onclick="modifyInput(this)">4</button>
+    <button id="5" onclick="modifyInput(this)">5</button>
+    <button id="6" onclick="modifyInput(this)">6</button>
+    <button id="7" onclick="modifyInput(this)">7</button>
+    <button id="8" onclick="modifyInput(this)">8</button>
+    <button id="9" onclick="modifyInput(this)">9</button>
+    <button onclick="addMethod(this)">+</button>
+    <button onclick="addMethod(this)">-</button>
+    <button onclick="addMethod(this)">*</button>
+    <button onclick="addMethod(this)">/</button>
+    <button onclick="addMethod(this)">%</button>
+    <button onclick="addMethod(this)">^2</button>
+    <br />
+    <br />
+    <button onclick="calculate()">Result (=)</button>
+    <br />
+    <br />
+    <div id="result"></div>
+    <script>
+        let str = '';
+
+        function modifyInput(obj) {
+            str += obj.id;
+            console.log(str);
+        }
+        function addMethod(obj){
+            str += obj.innerText;
+            console.log(str);
+        }
+        
+
+        function calculate() {
+            console.log(eval(str));
+        }
+    </script>
+</body>
+
+</html>
