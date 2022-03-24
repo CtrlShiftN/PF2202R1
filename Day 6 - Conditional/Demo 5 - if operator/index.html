@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // condition ? true : false 
+        // a + b <= 4 ?
+        let a = 1,
+            b = 2,
+            result; // declare variables 
+        if (a + b <= 4) {
+            result = 'Smaller';
+        } else {
+            result = 'Bigger';
+        }
+        // console.log(result);
+        // console.log(a + b <= 4 ? 'Smaller' : 'Bigger');
+
+        // if else if 
+        let c = 11;
+        if (c % 2 == 0) {
+            result = 'even';
+        } else if (c % 5 == 0) {
+            result = 'DividedBy5';
+        } else if (c % 3 == 0) {
+            result = 'DividedBy3';
+        } else {
+            result = 'Prime';
+        }
+        // console.log(result);
+        console.log(c % 2 == 0 ? 'Even' : (c % 5 == 0) ? 'DividedBy5' : (c % 3 == 0) ? 'DividedBy3' : 'Prime');
+    </script>
+</body>
+
+</html>

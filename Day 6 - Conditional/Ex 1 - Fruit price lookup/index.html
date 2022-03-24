@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruit Price Lookup</title>
+</head>
+
+<body>
+    <div class="container">
+        <input type="text" onkeyup="checkPrice(this)" placeholder="Tìm kiếm giá hoa quả">
+        <br>
+        <br>
+        <span id="result"></span>
+    </div>
+    <script>
+        let result = document.getElementById('result');
+        let output;
+
+        function checkPrice(obj) {
+            let fruitName = obj.value;
+            fruitName = fruitName.toLowerCase(); // chuyển String về ký tự viết thường
+            switch (true) {
+                case (fruitName == 'oi' || fruitName == 'ổi'):
+                case (fruitName == 'dua hau' || fruitName == 'dưa hấu'):
+                    output = '20000 VNĐ/kg';
+                    break;
+                case (fruitName == 'tao' || fruitName == 'táo'):
+                case (fruitName == 'xoai' || fruitName == 'xoài'):
+                    output = '30000 VNĐ/kg';
+                    break;
+                case (fruitName == 'cam'):
+                case (fruitName == 'chom chom' || fruitName == 'chôm chôm'):
+                    output = '40000 VNĐ/kg';
+                    break;
+                case (fruitName == 'mang cut' || fruitName == 'măng cụt'):
+                    output = '50000 VNĐ/kg';
+                    break;
+                default:
+                    output = 'Không tìm thấy loại hoa quả này';
+                    break;
+            }
+            result.innerText = output;
+        }
+    </script>
+</body>
+
+</html>
