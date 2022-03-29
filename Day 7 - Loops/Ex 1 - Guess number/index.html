@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess number</title>
+</head>
+
+<body>
+    <script>
+        let min = 1,
+            max = 100;
+        let guess = 0;
+        let keyword = Math.round(Math.random() * 99 + 1);
+        console.log(keyword);
+        do {
+            guess = parseInt(prompt("You guess: [" + min + " - " + max + "]"));
+            if (guess < keyword) {
+                if (min < guess) { // guess should bigger than min
+                    min = guess;
+                }
+            } else if (guess > keyword) {
+                if (max > guess) { // guess should smaller than max
+                    max = guess;
+                }
+            } else {
+                alert('You right! keyword = ' + keyword)
+            }
+        } while (guess != keyword);
+    </script>
+</body>
+
+</html>
