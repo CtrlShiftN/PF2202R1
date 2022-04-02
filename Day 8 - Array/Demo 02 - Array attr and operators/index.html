@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array attributes and operators</title>
+</head>
+
+<body>
+    <script>
+        let studentArr = ["Huy", "Quang", "Long"];
+        // add new elements
+        studentArr.push("Nhan");
+        studentArr[studentArr.length] = "Trung";
+        console.log(studentArr);
+        // array to string 
+        console.log(studentArr.join(" - "));
+        // reverse an array [1,2,3] => [3,2,1]
+        console.log(studentArr.reverse());
+        console.log(studentArr.reverse().join());
+        // sort an array 
+        studentArr.sort(); // [4, 2, 5] => [2, 4, 5];
+        console.log(studentArr);
+        // shift
+        studentArr.shift(); // remove first element
+        console.log(studentArr);
+        studentArr.unshift("Nguyen"); // add to first index an element
+        console.log(studentArr);
+        // delete the last element
+        studentArr.pop();
+        console.log(studentArr);
+    </script>
+</body>
+
+</html>
