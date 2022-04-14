@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reuse code</title>
+</head>
+
+<body>
+    <script>
+        // tong cac so tu 1 - 10
+        let sum = 0;
+        for (let i = 1; i <= 10; i++) sum += i;
+        console.log("Sum from 1 to 10 is " + sum);
+
+        // tong cac so tu 20 - 37
+        let sum2 = 0;
+        for (let i = 20; i <= 37; i++) sum2 += i;
+        console.log("Sum from 20 to 37 is " + sum2);
+
+        // tong cac so tu 35 - 49
+        let sum3 = 0;
+        for (let i = 35; i <= 49; i++) sum3 += i;
+        console.log("Sum from 35 to 49 is " + sum3);
+
+        // su dung function 
+        function sumRange(from, to) {
+            let sum = 0;
+            for (let i = from; i <= to; i++) {
+                sum += i;
+            }
+            console.log("Sum from " + from + " to " + to + " is: " + sum);
+        }
+        sumRange(1, 10);
+        sumRange(35, 49);
+        sumRange(20, 37);
+    </script>
+</body>
+
+</html>

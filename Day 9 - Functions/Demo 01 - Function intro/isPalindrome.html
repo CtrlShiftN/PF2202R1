@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check palindrome</title>
+    <style>
+        .t-left {
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" onkeyup="modifyInput(this)" placeholder="Enter any value">
+    <br>
+    <div class="t-left" id="result"></div>
+    <script>
+        let input;
+        let result = document.getElementById('result');
+
+        function modifyInput(obj) {
+            input = obj.value;
+            if (isPalindrome(input)) {
+                result.innerText = "Paline";
+            }else{
+                result.innerText = "uwu";
+            }
+        }
+
+        function isPalindrome(text) {
+            let result = true;
+            text = text.split('');
+            while (text.length > 1) {
+                if (text[0] != text[text.length - 1]) {
+                    result = false;
+                    break;
+                }else{
+                    text.pop();
+                    text.shift();
+                }
+            }
+            return result;
+        }
+    </script>
+</body>
+
+</html>

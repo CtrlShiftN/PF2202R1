@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // input: boolean answer; output: String
+        function confirmPlayGame(answer) {
+            // let result;
+            // if (answer) {
+            //     result = "Let us play the game.";
+            // }else{
+            //     result = "Game over!";
+            // }
+            // return result;
+            return answer ? "Let us play the game" : "Game over";
+        }
+
+        let answer = confirm("Do you want to play a game?");
+        let message = confirmPlayGame(answer);
+        console.log(message);
+    </script>
+</body>
+
+</html>

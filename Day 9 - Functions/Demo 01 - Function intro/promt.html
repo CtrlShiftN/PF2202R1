@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // arguments default
+        function getAge() {
+            // let birthYear = arguments[0];
+        }
+
+        // prompt
+        function calAge(birthYear) {
+            const now = new Date();
+            console.log("now ", now);
+            let currentYear = now.getFullYear();
+            let yourAge = currentYear - birthYear;
+            return yourAge;
+            // console.log("Your age: " + yourAge)
+        }
+        let yourBirthYear = parseInt(prompt("Enter your birth year: "));
+        console.log("Your age: " + calAge(yourBirthYear));
+
+        // return functions
+        function isEven(number) { // kiem tra so chan
+            // if (number % 2 == 0) {
+            //     return true;
+            // } else {
+            //     return false;
+            // }
+
+            return number % 2 == 0;
+        }
+
+        function isOdd(number) { // kiem tra so le
+            return number % 2 != 0;
+        }
+    </script>
+</body>
+
+</html>

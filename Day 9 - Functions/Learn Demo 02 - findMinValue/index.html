@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arr1 = [3, 5, 1, 8, -3, 7, 8];
+        let arr2 = [7, 12, 6, 9, 20, 56, 89];
+        let arr3 = [];
+        let arr4 = [0, 0, 0, 0, 0, 0];
+        let arr5 = [3];
+
+        function findMinValue(array) {
+            if (array.length == 0) {
+                return "Array is empty";
+            } else if (array.length == 1) {
+                return array[0];
+            } else {
+                let min = array[0];
+                for (let i = 1; i < array.length; i++) {
+                    if (array[i] < min) {
+                        min = array[i];
+                    }
+                }
+                return min;
+            }
+        }
+
+        console.log(findMinValue(arr1));
+        console.log(findMinValue(arr2));
+        console.log(findMinValue(arr3));
+        console.log(findMinValue(arr4));
+        console.log(findMinValue(arr5));
+    </script>
+</body>
+
+</html>
