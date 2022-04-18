@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertor</title>
+</head>
+
+<body>
+    <div class="card my-3 mx-auto" style="width: 50rem">
+        <div class="card-body">
+            <h1 class="text-center">Measure converter</h1>
+            <form id="degreeExchange">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="meter" placeholder="Meter">
+                    <span class="input-group-text">&#x21C6;</span>
+                    <input type="text" class="form-control" id="feet" placeholder="Feet">
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        let meter = document.getElementById('meter');
+        let feet = document.getElementById('feet');
+        let metUnit, feetUnit;
+        meter.addEventListener('keyup', function () {
+            metUnit = parseFloat(meter.value);
+            if (!isNaN(metUnit) || metUnit != null) {
+                feet.value = metUnit * 3.279;
+            }
+        });
+        feet.addEventListener('keyup', function () {
+            feetUnit = parseFloat(feet.value);
+            if (!isNaN(feetUnit)) {
+                meter.value = feetUnit * 0.305;
+            }
+        });
+    </script>
+</body>
+
+</html>
