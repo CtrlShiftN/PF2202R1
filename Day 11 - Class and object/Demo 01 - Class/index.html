@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creating an object</title>
+</head>
+
+<body>
+    <script src="js/Person.js"></script>
+    <script src="js/Circle.js"></script>
+    <script>
+        // class Person
+        let quan = new Person("Quan", 2000, "Female", "quan@yahoo.com", "0912123123", "So 1 duong 1 HCM");
+        // console.log(quan.getAge());
+        // quan.changeName("Son");
+        // quan.name = "Nam";
+        // console.log(quan.name);
+        // console.log(quan);
+        // for (const key in quan) {
+        //     console.log(key + ": " + quan[key]);
+        // }
+
+
+        // class Circle
+        let circle = new Circle(10, "red");
+        // console.log(circle.getRadius());
+        // console.log(circle.getArea());
+
+        //class Student
+        let student = new Student("Quan", 2000, "Female", "quan@yahoo.com", "0912123123", "So 1 duong 1 HCM", 123321);
+        console.log(student.getAge());
+    </script>
+</body>
+
+</html>
