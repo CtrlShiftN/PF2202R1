@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Flashlamp</title>
+</head>
+
+<body>
+    <script>
+        class Battery {
+            constructor() {}
+
+            setEnergy(energy) {
+                this.energy = energy;
+            }
+
+            getEnergy() {
+                return this.energy;
+            }
+
+            decreaseEnergy() {
+                this.energy = this.energy - 1;
+            }
+        }
+
+
+        class FlashLamp {
+            constructor() {}
+
+            setBattery(battery) {
+                this.battery = battery;
+            }
+
+            getBattery() {
+                return this.battery;
+            }
+
+            light() {
+                if (this.status) {
+                    alert("Lighting");
+                } else {
+                    alert("tối om");
+                }
+            }
+
+            turnOn() {
+                this.status = true;
+            }
+
+            turnOff() {
+                this.status = false;
+            }
+
+            getStatus(){
+                return this.status;
+            }
+
+        }
+
+        let bat = new Battery();
+        bat.setEnergy(30);
+        console.log(bat);
+
+        let fl = new FlashLamp();
+        fl.setBattery(bat);
+        console.log(fl);
+
+        fl.turnOn();
+
+        console.log(fl);
+
+        let arr = [1, 2, 3];
+        console.log(arr);
+        arr.push(4);
+        console.log(arr);
+    </script>
+</body>
+
+</html>

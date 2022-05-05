@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rectangle</title>
+</head>
+
+<body>
+    <canvas width="300" height="300" style="border:1px solid #000000" id="myCanvas"></canvas>
+    <br>
+    <span id="result"></span>
+    <br>
+    <input type="number" name="width" onkeyup="modifyInput(this)" placeholder="Enter the rect width">
+    <input type="number" name="height" onkeyup="modifyInput(this)" placeholder="Enter the rect height">
+    <br>
+    <button onclick="drawRect()">Draw</button>
+    <script>
+        var c = document.getElementById("myCanvas");
+        class Rectangle {
+            constructor(width, height) {
+                this.width = width;
+                this.height = height;
+            }
+
+            getPerimeter() {
+                return (this.width + this.height) * 2;
+            }
+
+            getArea() {
+                return this.width * this.height;
+            }
+
+            draw() {
+                var ctx = c.getContext("2d");
+                ctx.fillStyle = 'black';
+                ctx.fillRect(this.width, this.height, this.width, this.height);
+            }
+        }
+        let width, height;
+
+        function modifyInput(obj) {
+            switch (obj.name) {
+                case "width":
+                    width = parseFloat(obj.value);
+                    break;
+                case "height":
+                    height = parseFloat(obj.value);
+                    break;
+                default:
+                    console.log('Error wrong input');
+                    break;
+            }
+        }
+
+        function drawRect() {
+            // khoi tao object Rect
+            const rect = new Rectangle(width, height);
+            document.getElementById('result').innerText = 'Chu vi: ' + rect.getPerimeter() + ', Dien tich: ' + rect
+                .getArea();
+            rect.draw();
+        }
+    </script>
+</body>
+
+</html>

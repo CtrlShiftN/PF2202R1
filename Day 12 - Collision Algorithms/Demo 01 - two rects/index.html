@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collision of two rects</title>
+</head>
+
+<body>
+    <canvas width="500" height="500" style="border: 1px solid red;" id="my-canvas"></canvas>
+    <script src="js/Rect.js"></script>
+    <script src="js/Circle.js"></script>
+    <script>
+        // let rect1 = new Rect(10, 20, 200, 100, '#ff0000');
+        // rect1.draw('my-canvas');
+        let rect2 = new Rect(30, 110, 200, 100, '#0066CC');
+        rect2.draw('my-canvas');
+        // console.log(rect1.isCollisionRect(rect2));
+        let cir1 = new Circle(240, 225, 20, '#00FF00');
+        cir1.draw('my-canvas');
+        // let cir2 = new Circle(90, 150, 20, '#ff0000');
+        // cir2.draw('my-canvas');
+        console.log(cir1.isCollisionRect(rect2));
+    </script>
+</body>
+
+</html>
