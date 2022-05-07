@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ball & Brick</title>
+    <link rel="stylesheet" href="assets/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container pt-5 text-center">
+        <canvas width="500" height="500" style="border:1px solid red" id="game-canvas"></canvas>
+        <canvas width="300" height="500" style="border:1px solid blue" id="howto-canvas"></canvas>
+    </div>
+    <script src="assets/js/Circle.js"></script>
+    <script>
+        let gameContext = document.getElementById("game-canvas").getContext("2d");
+        let x = 250,
+            y = 450,
+            xMoving = yMoving = 1, speed = 10;
+
+        gameContext.beginPath();
+        gameContext.arc(x, y, 20, 0, 2 * Math.PI);
+        gameContext.fillStyle = this.color;
+        gameContext.fill();
+
+        function run() {
+            gameContext.clearRect(x - 20, y - 20, 400, 400);
+            x += xMoving;
+            if (x >= 480 || x <= 20 ) {
+                xMoving = -xMoving;
+            }
+            y -= yMoving;
+            if (y<= 20 || y>= 480) {
+                yMoving = -yMoving;
+            }
+            gameContext.beginPath();
+            gameContext.arc(x, y, 20, 0, 2 * Math.PI);
+            gameContext.fillStyle = this.color;
+            gameContext.fill();
+        }
+        // lặp đi lặp lại việc chạy lên chạy xuống của hcn đã vẽ sau khoảng thời gian nhất định
+        setInterval(run, speed);
+    </script>
+</body>
+
+</html>
