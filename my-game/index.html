@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <title>Ball and bricks</title>
+</head>
+
+<body>
+    <div class="container pt-5 text-center">
+        <canvas id="gameCanvas" width="500" height="500" style="border: 1px solid black"></canvas>
+        <canvas id="gameCanvas" width="300" height="500" style="border: 1px solid black"></canvas>
+    </div>
+    <script src="assets/js/Circle.js"></script>
+    <script src="assets/js/Rect.js"></script>
+    <script>
+        let mainFrame = document.getElementById('gameCanvas');
+        let gameContext = mainFrame.getContext("2d");
+        let isGameOver = false;
+
+        // paddle attrs
+        let paddleCurrentX = mainFrame.width / 2 - 100;
+        let paddleCurrentY = mainFrame.height - 45;
+        let paddle = new Rect(paddleCurrentX, paddleCurrentY, 200, 20, "#ff0000");
+
+        // ball attributes
+        let ballCurrentX = mainFrame.width / 2;
+        let ballCurrentY = mainFrame.height - 70;
+        let ball = new Circle(ballCurrentX, ballCurrentY, 10, '#00ff00');
+
+        // draw the paddle 
+        function drawPaddle() {
+            gameContext.beginPath();
+            gameContext.rect(paddle.getX(), paddle.getY(), paddle.getWidth(), paddle.getHeight());
+            gameContext.fillStyle = paddle.getColor();
+            gameContext.fill();
+            gameContext.closePath();
+        }
+
+        function drawBall() {
+            gameContext.beginPath();
+            gameContext.arc(ball.getX(), ball.getY(), ball.getRadius(), 0, Math.PI * 2);
+            gameContext.fillStyle = ball.getColor();
+            gameContext.fill();
+            gameContext.closePath();
+        }
+
+        function updatePaddlePosition() {
+            // xu ly su kien di chuyen cua paddle
+            if (paddle.isMovingToLeft()) {
+                paddle.toLeft();
+            } else if (paddle.isMovingToRight()) {
+                paddle.toRight();
+            }
+
+            // paddle cham 2 ben 
+            if (paddle.getX() < 0) {
+                paddle.x = 0;
+            } else if (paddle.getX() > mainFrame.width - paddle.getWidth()) {
+                paddle.x = mainFrame.width - paddle.getWidth();
+            }
+        }
+
+        function updateBallPosition() {
+            if (ball.getX() < ball.getRadius() || ball.getX() > mainFrame.width - ball.getRadius()) {
+                ball.reverseDistanceToX();
+            }
+            if (ball.getY() < ball.getRadius()) {
+                ball.reverseDistanceToY();
+            }
+            ball.move();
+        }
+
+        function handleBallCollisionPaddle() {
+            if (ball.getX() + ball.getRadius() >= paddle.getX() && ball.getX() + ball.getRadius() <= paddle.getX() +
+                paddle.getWidth() && ball.getY() + ball.getRadius() >= mainFrame.height - paddle.getHeight() - 20) {
+                ball.reverseDistanceToY();
+            }
+        }
+
+        function play() {
+            if (!isGameOver) {
+                gameContext.clearRect(0, 0, mainFrame.width, mainFrame.height);
+                drawPaddle();
+                drawBall();
+                updatePaddlePosition();
+                handleBallCollisionPaddle();
+                updateBallPosition();
+                if (ball.getY() + ball.getRadius() >= mainFrame.height) {
+                    isGameOver = true;
+                }
+                requestAnimationFrame(play);
+            } else {
+                alert("You lose!!!");
+            }
+
+        }
+
+        document.addEventListener('keydown', function (e) {
+            if (e.keyCode == 37 || e.keyCode == 65) {
+                paddle.moveLeft();
+            } else if (e.keyCode == 39 || e.keyCode == 68) {
+                paddle.moveRight();
+            }
+        })
+
+        document.addEventListener('keyup', function (e) {
+            if (e.keyCode == 37 || e.keyCode == 65) {
+                paddle.stop();
+            } else if (e.keyCode == 39 || e.keyCode == 68) {
+                paddle.stop();
+            }
+        })
+
+
+        play();
+    </script>
+</body>
+
+</html>
